@@ -5,6 +5,8 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import router from 'router';
+import authentication from './router/authentication';
 
 const app= express();
 
@@ -26,3 +28,17 @@ mongoose.Promise=Promise;
 mongoose.connect(mongo_url);
 
 mongoose.connection.on('error',(error:Error)=>console.log(error));
+
+// app.use('/',router());
+// import express from 'express';
+// import router from './router';
+// import authentication from './router/authentication';
+
+// const app = express();
+
+app.use(express.json());
+// app.use(router);
+app.use('/auth', authentication);
+// app.listen(8080, () => {
+//   console.log('Server is running on http://localhost:8080');
+// });

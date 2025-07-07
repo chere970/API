@@ -1,6 +1,18 @@
-import express from 'express';
+// import express from 'express';
+// import authentication from './authentication';
 
-const router=express.Router();
-export default():express.Router=>{
-    return router;
-};
+// const router=express.Router();
+// export default():express.Router=>{
+//     authentication(router);
+//     return router;
+
+// };
+
+import express from 'express';
+import authentication from './authentication';
+
+const router = express.Router();
+
+router.use('/auth', authentication);
+
+export default router;

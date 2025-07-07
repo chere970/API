@@ -1,7 +1,7 @@
 import { IconTrophy } from '@tabler/icons-react';
 import express from 'express';
 import { createUser, getUserByEmail } from '../db/users'; // Assuming you have a user model with this function
-import {authentication, random} from '../db/helpers';
+import {authentication, random} from '../helpers';
 
 export const register = async (req: express.Request, res: express.Response) => {
     try{
